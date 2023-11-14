@@ -10,6 +10,5 @@ with interval_col:
     interval = st.number_input('Write your interval here -')
 
 if file and interval:
-    filepath = 'workout-routes/' + file.name
-    fig = Plotter.create_pace_plot(filepath, interval)
+    fig = Plotter.create_pace_plot(file, interval)
     st.pyplot(fig)

@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from collections import defaultdict
+from io import StringIO
 
 
-def parse_gpx(filepath):
-    gpx = open(filepath, 'r')
+def parse_gpx(file):
+    gpx = StringIO(file.getvalue().decode("utf-8")).read()
     parsed_gpx = gpxpy.parse(gpx)
     return parsed_gpx
 
